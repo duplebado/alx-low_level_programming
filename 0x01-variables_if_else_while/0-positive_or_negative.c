@@ -7,7 +7,7 @@
  *  main - Entry point
  *  Description - Prints if random generated number is +tive, zero or -tive
  *  Return - Always 0 (Success)
- */
+ **/
 int main(void)
 {
 	int n;
