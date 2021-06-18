@@ -16,7 +16,7 @@ int main(void)
 		} else
 		{
 			putchar(c);
-			c++
+			c++;
 		}
 	}
 	putchar('\n');
