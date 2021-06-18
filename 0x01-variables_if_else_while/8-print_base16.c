@@ -5,11 +5,11 @@
  */
 int main(void)
 {
-	int num;
+	char c;
 
-	for (num = 0; num < 16; num++)
+	for (c = 'a'; num < 'q'; c++)
 	{
-		if (num < 10)
+		if (c < 'k')
 			putchar(num + '0');
 		else
 			putchar(num - 10);
