@@ -10,9 +10,11 @@ int main(void)
 	for (c = 'a'; c < 'q'; c++)
 	{
 		if (c < 'k')
+		{
 			putchar(c + '0');
-		else
-			putchar(c - 10);
+		} else {
+			putchar(c - 'k');
+		}
 	}
 	putchar('\n');
 	return (0);
