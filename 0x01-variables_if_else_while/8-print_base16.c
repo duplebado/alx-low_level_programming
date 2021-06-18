@@ -6,14 +6,17 @@
 int main(void)
 {
 	char c;
+	int num;
 
-	for (c = 'a'; c < 'q'; c++)
+	for (num = 0; num < 16; num++)
 	{
-		if (c < 'k')
+		if (num < 10)
 		{
-			putchar(c + '0');
-		} else {
-			putchar(c - 'k');
+			putchar(num + '0');
+		} else
+		{
+			putchar(c);
+			c++
 		}
 	}
 	putchar('\n');
