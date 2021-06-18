@@ -7,12 +7,12 @@ int main(void)
 {
 	char c;
 
-	for (c = 'a'; num < 'q'; c++)
+	for (c = 'a'; c < 'q'; c++)
 	{
 		if (c < 'k')
-			putchar(num + '0');
+			putchar(c + '0');
 		else
-			putchar(num - 10);
+			putchar(c - 10);
 	}
 	putchar('\n');
 	return (0);
