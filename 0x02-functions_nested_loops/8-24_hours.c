@@ -22,7 +22,12 @@ void jack_bauer(void)
 			{
 				while (sec2 <= 9)
 				{
-					printf("%d%d:%d%d\n", hr1, hr2, sec1, sec2);
+					_putchar(hr1 + '0');
+					_putchar(hr2 + '0');
+					_putchar(':');
+					_putchat(sec1 + '0');
+					_putchar(sec2 + '0');
+					_putchar('\n');
 					sec2++;					
 				}
 				sec2 = 0;
