@@ -10,8 +10,9 @@ int main(void)
 {
 	int i = 0;
 	char school_name[] = "Holberton";
+
 	while (i < 9)
-	{	
+	{
 		_putchar(school_name[i]);
 		i++;
 	}
