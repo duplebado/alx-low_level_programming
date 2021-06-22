@@ -3,7 +3,7 @@
 /**
  * print_last_digit - Prints last digit of a number
  *
- * @n - A number
+ * @n: A number
  *
  * Return: last digit of @n
  */
@@ -14,7 +14,7 @@ int print_last_digit(int n)
 	n = _abs(n);
 	last_digit = n % 10;
 
-	printf("%d", last_digit);
+	_putchar(last_digit + '0');
 
 	return last_digit;
 }
