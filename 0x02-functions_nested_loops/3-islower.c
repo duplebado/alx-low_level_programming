@@ -3,6 +3,8 @@
 /**
  * islower - checks for lowercase character 
  *
+ * @c - A number to be checked 
+ *
  * Return: 1 (Success) OR 0 (Failure)
  */
  
