@@ -14,7 +14,7 @@ void print_triangle(int size)
 
 	if (size <= 0)
 	{
-		_putchat('\n');
+		_putchar('\n');
 		return;
 	}
 
