@@ -13,7 +13,7 @@ int _strlen(char *s)
 	whie(*s != '\0')
 	{
 		length++;
-		s++;
+		*s++;
 	}
 
 	return (length);
