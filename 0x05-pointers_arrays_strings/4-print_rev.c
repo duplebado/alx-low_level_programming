@@ -12,9 +12,8 @@ void print_rev(char *s)
 {
 	if (*s != '\0')
 	{
-		*s++;
-		print_rev(s);
-		*s--;
+		print_rev(++s);
+		s--;
 	}
 
 	_putchar(*s);
