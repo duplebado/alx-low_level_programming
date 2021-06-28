@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -9,9 +10,23 @@
 int _strlen(char *s)
 {
 	int length = 0;
-
-	while (*s[length] != '\0')
+	printf("%c\n", *s++);
+	// while (*s[length] != '\0')
 		length++;
 
 	return (length);
+}
+
+/**
+ * main - check the code for ALX School students.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    char *str;
+    int len;
+
+    str = "Holberton!";
+    len = _strlen(str);
 }
