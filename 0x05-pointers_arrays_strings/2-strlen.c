@@ -10,9 +10,17 @@
 int _strlen(char *s)
 {
 	int length = 0;
+<<<<<<< HEAD
 	printf("%c\n", *s++);
 	// while (*s[length] != '\0')
+=======
+
+	while (*s != '\0')
+	{
+>>>>>>> 840ddff39459184ce96ec260a1cba649e5d3bbe0
 		length++;
+		s++;
+	}
 
 	return (length);
 }
