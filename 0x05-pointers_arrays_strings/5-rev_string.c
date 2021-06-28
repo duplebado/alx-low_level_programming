@@ -12,7 +12,7 @@ void rev_string(char *s)
 {
 	if (*s != '\0')
 	{
-		print_rev(++s);
+		rev_string(++s);
 		s--;
 	}
 
