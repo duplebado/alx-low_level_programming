@@ -12,9 +12,9 @@ void puts2(char *str)
 {
 	int i = 0;
 
-	while (s[i])
+	while (str[i])
 	{
-		_putchar(s[i]);
+		_putchar(str[i]);
 		i += 2;
 	}
 
