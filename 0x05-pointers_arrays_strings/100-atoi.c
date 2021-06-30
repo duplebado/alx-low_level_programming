@@ -13,7 +13,7 @@ int _atoi(char *s)
 	int sign_cache = 1;
 	int result = 0;
 
-	while (s[i] != '\0')
+	while (s[0] != '\0')
 	{
 		if (s[0] == '-')
 			sign_cache *= -1;
