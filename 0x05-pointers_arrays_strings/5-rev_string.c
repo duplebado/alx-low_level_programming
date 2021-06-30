@@ -14,6 +14,7 @@ void rev_string(char *s)
 	
 	while (s[i])
 		i++;
+
 	int j = i / 2;
 	int right = 0;
 
