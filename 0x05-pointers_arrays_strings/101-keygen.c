@@ -12,12 +12,12 @@ int main(void)
 {
 	char k[200];
 	int num = 0;
-	int rand = 0;
+	int random = 0;
 	char *key = k;
 
 	srand(time(NULL));
 
-	while (number < 2645)
+	while (num < 2645)
 	{
 		random = rand() % 122;
 
@@ -25,11 +25,11 @@ int main(void)
 		{
 			*key = random;
 			key = key + 1;
-			number += random;
+			num += random;
 		}
 	}
 
-	*key = (2772 - number);
+	*key = (2772 - num);
 	*(key + 1) = '\n';
 	printf("%s", k);
 	return (0);
