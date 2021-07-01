@@ -1,7 +1,7 @@
 #include "holberton"
 
 /**
- * _strcmp -  compare two strings
+ * _strcmp - compare two strings
  *
  * @s1: First string
  *
@@ -24,5 +24,5 @@ int _strcmp(char *s1, char *s2)
 		}
 		i++;
 	}
-	return (equal);
+	return (diff);
 }
