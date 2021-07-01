@@ -6,13 +6,14 @@
  * @dest: destination string; src string is appended to it
  *
  * @src: source string; gets appended to dest string
- * 
+ *
  * Return: pointer to dest
  */
 
 char *_strcat(char *dest, char *src)
 {
-	int i = 0; j = 0;
+	int i = 0;
+	int j = 0;
 
 	while (dest[i] != '\0')
 		i++;
@@ -26,5 +27,5 @@ char *_strcat(char *dest, char *src)
 
 	*(dest + i) = '\0';
 
-	return (dest); 
+	return (dest);
 }
