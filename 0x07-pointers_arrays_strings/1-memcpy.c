@@ -1,12 +1,14 @@
-#include "holberton.h"
+#include "holberton.hi"
 
 /**
- * _memcpy - copies n bytes from memory area @src to 
+ * _memcpy - copies n bytes from memory area @src to
  * memory area @ dest
  *
  * @src: source memory area
  *
  * @dest: destination memory area
+ *
+ * @n: number of bytes
  *
  * Return: pointer to @dest
  */
