@@ -1,4 +1,4 @@
-#include "holberton.hi"
+#include "holberton.h"
 
 /**
  * _memcpy - copies n bytes from memory area @src to
