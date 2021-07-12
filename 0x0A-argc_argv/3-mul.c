@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 		_putchar('r');
 		_putchar('o');
 		_putchar('r');
-		_putchar('\0');
+		_putchar('\n');
 		return (0);
 	}
 }
