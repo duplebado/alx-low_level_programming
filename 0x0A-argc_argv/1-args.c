@@ -14,7 +14,7 @@ void print_number(int num);
 
 int main(int argc, char *argv[] __attribute__((unused)))
 {
-	print_number(argc);
+	print_number(--argc);
 	_putchar('\n');
 	return (0);
 }
