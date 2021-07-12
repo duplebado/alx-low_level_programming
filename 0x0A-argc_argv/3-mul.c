@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 int _atoi(char *s);
-void multiply_two_nums(int num1, int num2);
+int multiply_two_nums(int num1, int num2);
 void print_number(int n);
 
 /**
