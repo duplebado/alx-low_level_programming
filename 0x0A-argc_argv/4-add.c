@@ -15,7 +15,6 @@ int main(int argc, char *argv[])
 {
 	int result = 0;
 	int i = 0;
-	int converted_value;
 
 	if (argc == 1)
 	{
@@ -25,17 +24,20 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			converted_value = atoi(argv[i]);
+			int j = 0;
 
-			if (!converted_value && *argv[i] != '0')
-			{
-				printf("Error\n");
-				return (1);
+			while (argv[i][j] != '\0')
+			{	
+				if (argv[i][j] < '0' || argv[i][j] > '9')
+				{
+					printf("Error\n");
+					return (1);
+				}
+
+				j++;
 			}
-			else
-			{
-				result += converted_value;
-			}
+
+			result += atoi(argv[i]);
 		}
 
 		printf("%d\n", result);
