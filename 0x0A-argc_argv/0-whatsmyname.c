@@ -14,7 +14,7 @@ void print_string(char *str);
 
 int main(int argc __attribute__((unused)), char *argv[])
 {
-	print_array_elements(argv[0]);
+	print_string(argv[0]);
 	_putchar('\n');
 
 	return (0);
