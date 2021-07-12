@@ -12,7 +12,7 @@ void print_number(int num);
  * Return: 0, success
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[] __attribute__((unused)))
 {
 	print_number(argc);
 	_putchar('\n');
