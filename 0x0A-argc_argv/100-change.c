@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 		else
 			cent = 1;
 
-		result = amount / cent;
+		result += amount / cent;
 		amount %= cent;
 	}
 
