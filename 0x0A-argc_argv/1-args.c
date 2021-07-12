@@ -1,19 +1,34 @@
 #include "holberton.h"
 
 /**
+ * print_number - prints number with _putchar
+ *
+ * @num: integer, number to be printed
+ *
+ * Return: void
+ */
+
+void print_number(int num)
+{
+	if (num / 10)
+		print_number(num / 10);
+
+	putchar(num % 10 + '0');
+}
+
+/**
  * main - entry point, prints it's name
  *
- * @argc: @argv length
+ * @argc: integer, length of @argv
  *
  * @argv: one-dimensional array of strings, arguments of this program
  *
  * Return: 0, success
  */
 
-int main(argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	print
-
+	print_number(argc);
 	_putchar('/n');
 	return (0);
 }
