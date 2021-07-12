@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 		else if (amount >= 10)
 			cent = 10;
 		else if (amount >= 5)
-			cent = 10;
+			cent = 5;
 		else if (amount >= 2)
 			cent = 2;
 		else
