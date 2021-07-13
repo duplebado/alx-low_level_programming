@@ -38,4 +38,6 @@ char *str_concat(char *s1, char *s2)
 
 	for (j = 0; j < s2_length; j++, i++)
 		alloc_mem[i] = *(s2 + j);
+
+	return (alloc_mem);
 }
