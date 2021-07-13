@@ -19,15 +19,19 @@ char *str_concat(char *s1, char *s2)
 	char *alloc_mem;
 	unsigned int i, j;
 
+	if (s1 == NULL)
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
+
 	while (*(s1 + s1_length) != '\0')
 		s1_length++;
 
 	while (*(s2 + s2_length) != '\0')
 		s2_length++;
 
-	s2_length++;
-
-	alloc_mem = malloc((s1_length * sizeof(*s1)) + (s2_length * sizeof(*s2)));
+	alloc_mem = malloc(1 + (s1_length * sizeof(*s1)) + (s2_length * sizeof(*s2)));
 
 	if (alloc_mem == NULL)
 		return ('\0');
