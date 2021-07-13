@@ -21,7 +21,7 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return ('\0');
 
-	for (i = 1; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		j = 0;
 
@@ -39,18 +39,18 @@ char *argstostr(int ac, char **av)
 	if (result == NULL)
 		return ('\0');
 
-	for (i = 1; i < t_length; i++)
+	for (i = 0; i < t_length; i++)
 	{
 		j = 0;
 
 		while (av[i][j] != '\0')
 		{
-			result[i - 1] = av[i][j];
+			result[i] = av[i][j];
 			j++;
 			i++;
 		}
 
-		result[i - 1] = '\n';
+		result[i] = '\n';
 	}
 
 	result[t_length] = '\0';
