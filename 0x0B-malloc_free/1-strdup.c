@@ -16,7 +16,7 @@ char *_strdup(char *str)
 	unsigned int i;
 	unsigned int length_of_string = 0;
 
-	if (str[0] == NULL)
+	if (str == NULL)
 		return ('\0');
 
 	while (*(str + length_of_string) != '\0')
