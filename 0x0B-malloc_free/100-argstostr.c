@@ -54,4 +54,5 @@ char *argstostr(int ac, char **av)
 	}
 
 	result[t_length] = '\0';
+	return (result);
 }
