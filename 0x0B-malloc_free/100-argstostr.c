@@ -1,51 +1,42 @@
+#include <stdio.h>
 #include <stdlib.h>
-
+#include "holberton.h"
 /**
- * argstostr - concatenates all the arguments of the program
- *
- * @ac: argument total count
- *
- * @av: pointer to arguments
- *
- * Return: pointer to concatenated string (SUCCESS) or
- * NULL if @ac == 0 or @av == NULL (FAILURE) or
- * NULL if if insufficient memory was available (FAILURE)
+ * argstostr - main entry
+ * @ac: int input
+ * @av: double pointer array
+ * Return: 0
  */
-
-
 char *argstostr(int ac, char **av)
 {
-	int i, j;
-	int len = 0;
-	int t_length = 0;
-	char *result;
+	int i, n, k = 0, len = 0;
+	char *str;
 
 	if (ac == 0 || av == NULL)
-		return ('\0');
+		return (NULL);
 
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j] != '\0'; j++)
-			t_length++;
-
-		t_length++;
+		for (n = 0; av[i][n]; n++)
+			len++;
 	}
+	len += ac;
 
-	result = malloc(sizeof(char) * t_length + 1);
-
-	if (result == NULL)
-	{
-		return ('\0');
-	}
+	str = malloc(sizeof(char) * len + 1);
+	if (str == NULL)
+		return (NULL);
 
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j] != '\0'; j++)
+		for (n = 0; av[i][n]; n++)
 		{
-			result[len++] = av[i][j];
+			str[k] = av[i][n];
+			k++;
 		}
-		result[len++] = '\n';
+		if (str[k] == '\0')
+		{
+			str[k++] = '\n';
+		}
 	}
-
-	return (result);
+	return (str);
 }
