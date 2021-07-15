@@ -13,34 +13,33 @@
  * with the concatenated string (SUCCESS) or
  * NULL if insufficient memory was available (FAILURE)
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j;
-	char *ptr;
+  char *strDup;
+  int i;
+  unsigned int j;
 
-	if (s1 == NULL)
-	{
-		s1 = "";
-		ptr = malloc(n + 1);
-	}
-	else
-	{
-		ptr = malloc(sizeof(*s1) + n + 1);
-	}
-
-	if (s2 == NULL)
-		s2 = "";
-
-	if (ptr == NULL)
-		return ('\0');
-
-	for (i = 0; s1[i]; i++)
-		ptr[i] = s1[i];
-
-	for (j = 0; s2[j] && j < n; j++, i++)
-		ptr[i] = s2[j];
-
-	ptr[i] = '\0';
-	return (ptr);
+  if (s1 == NULL)
+    s1 = "";
+  if (s2 == NULL)
+    s2 = "";
+  i = 0;
+  while (s1[i] != '\0')
+    i++;
+  strDup = malloc(sizeof(char) * (i + n + 1));
+  if (strDup == NULL)
+    return (NULL);
+  i = j = 0;
+  while (s1[i] != '\0')
+    {
+      strDup[i] = s1[i];
+      i++;
+    }
+  while (j < n && s2[j] != '\0')
+    {
+      strDup[i] = s2[j];
+      i++, j++;
+    }
+  strDup[i] = '\0';
+  return (strDup);
 }
