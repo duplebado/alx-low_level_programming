@@ -1,7 +1,8 @@
+#include <stdio.h>
 #include <stdlib.h>
 
-unsigned int mul(unsigned int n1, unsigned int n2);
-unsigned long int getNumber(*str);
+unsigned long int mul(unsigned long int n1, unsigned long int n2);
+unsigned long int getNumber(char *str);
 
 /**
  * main - entry point, multiplies two numbers
@@ -40,7 +41,6 @@ int main(int argc, char *argv[])
 	}
 
 	printf("%lu\n", mul(num1, num2));
-	_putchar('\n');
 
 	return (0);
 }
@@ -62,7 +62,7 @@ unsigned long int getNumber(char *str)
 	for (i = 0; str[i]; i++)
 	{
 		if (str[i] >= '0' && str[i] <= '9')
-			result = (result * 10) + (s[i] - '0');
+			result = (result * 10) + (str[i] - '0');
 		else
 			return ('\0');
 	}
