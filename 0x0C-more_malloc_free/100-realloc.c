@@ -9,14 +9,14 @@
  *
  * @new_size: new size, in bytes of the new memory block
  *
- * Return: 
+ * Return: pointer to new allocated memory
  * NULL, if @ptr is NULL (FAILURE) or
  * NULL, if @new_size == 0 && @ptr != NULL
  */
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	int ;
+	int i;
 	void *new_ptr;
 
 	if (new_size == old_size)
@@ -29,7 +29,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		if (new_ptr == NULL)
 			return ('\0');
 
-		return new_ptr;
+		return (new_ptr);
 	}
 
 	if (new_size == 0 && ptr)
@@ -38,7 +38,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return ('\0');
 	}
 
-	new_ptr = malloc(sizeof (*ptr) * new_size);
+	new_ptr = malloc(sizeof(*ptr) * new_size);
 
 	if (!new_ptr)
 		return ('\0');
