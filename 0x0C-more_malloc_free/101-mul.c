@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
  * NULL, if string includes char
  */
 
-unsigned long int getNumber(*str)
+unsigned long int getNumber(char *str)
 {
 	int i;
 	unsigned long int result = 0;
