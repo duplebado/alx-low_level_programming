@@ -1,51 +1,45 @@
-#include <stdlib.h>
+#include "holberton.h"
 
 /**
- * _realloc - reallocates a memory block using malloc and free functions
+ * _realloc - function that reallocates a memory block using malloc and free
+ * @ptr: is a pointer to the memory previously allocated with a call to malloc
+ * @old_size: is the size, in bytes, of the allocated space fot ptr
+ * @new_size: is the new size, in bytes of the new memory block
  *
- * @ptr: pointer to the memory previously allocated with a call to malloc
- *
- * @old_size: size, in bytes, of the allocated space for @ptr
- *
- * @new_size: new size, in bytes of the new memory block
- *
- * Return: pointer to new allocated memory
- * NULL, if @ptr is NULL (FAILURE) or
- * NULL, if @new_size == 0 && @ptr != NULL
+ * Return: new pointer or NULL
  */
-
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	unsigned int i;
 	void *new_ptr;
+	char *cp_ptr, *copy;
+	unsigned int i;
 
 	if (new_size == old_size)
-		return ('\0');
-
-	if (ptr == NULL)
-	{
-		new_ptr = malloc(new_size);
-
-		if (new_ptr == NULL)
-			return ('\0');
-
-		return (new_ptr);
-	}
-
+		return (ptr);
 	if (new_size == 0 && ptr)
 	{
 		free(ptr);
-		return ('\0');
+		return (NULL);
 	}
 
-	new_ptr = malloc(new_size);
-
+	if (!ptr)
+	{
+		ptr = malloc(new_size);
+		if (!ptr)
+			return (NULL);
+		return (ptr);
+	}
+	cp_ptr = ptr;
+	new_ptr = malloc(new_size * sizeof(*cp_ptr));
 	if (!new_ptr)
-		return ('\0');
-
-	for (i = 0; i < old_size; i++)
-		*((char *)new_ptr + i) = *((char *)ptr + i);
+	{
+		free(ptr);
+		return (NULL);
+	}
+	copy = new_ptr;
+	for (i = 0; i < new_size && i < old_size; i++)
+		copy[i] = *cp_ptr++;
 
 	free(ptr);
-	return ((void *)new_ptr);
+	return (new_ptr);
 }
