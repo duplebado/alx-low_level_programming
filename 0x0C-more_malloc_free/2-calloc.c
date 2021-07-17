@@ -14,19 +14,19 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *buffer;
-
-	int long i;
+	unsigned int i;
+	char *ptr;
 
 	if (nmemb == 0 || size == 0)
-		return (NULL);
+		return ('\0');
 
-	buffer = malloc((nmemb * size));
-	if (buffer == NULL)
-		return (NULL);
+	ptr = malloc(nmemb * size);
 
-	for (i = 0; i < (nmemb * size); i += 1)
-		*(buffer + i) = 0;
+	if (ptr == NULL)
+		return ('\0');
 
-	return ((void *)buffer);
+	for (i = 0; i < nmemb; i++)
+		*(ptr + i) = 0;
+
+	return ((void *)ptr);
 }
