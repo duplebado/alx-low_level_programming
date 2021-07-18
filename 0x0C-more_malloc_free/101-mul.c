@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "holberton.h"
 
-char *populateResult(char *dest, char *n1, int n1_len, char *n2, int n2_len);
+void populateResult(char *dest, char *n1, int n1_len, char *n2, int n2_len);
 int getLengthOfNum(char *str);
 void print_result(char *src, int length);
 
@@ -95,11 +95,9 @@ int getLengthOfNum(char *str)
  * @n1_len: length of @n1
  *
  * @n2_len: length of @n2
- *
- * Return: pointer to @dest
  */
 
-char *populateResult(char *dest, char *n1, int n1_len, char *n2, int n2_len)
+void populateResult(char *dest, char *n1, int n1_len, char *n2, int n2_len)
 {
 	int i, j, k, temp_value, non_carry_value;
 	int carry_value = 0;
@@ -158,7 +156,7 @@ char *populateResult(char *dest, char *n1, int n1_len, char *n2, int n2_len)
 			i = -1;
 	}
 
-	return (dest);
+	free(dest);
 }
 
 /**
