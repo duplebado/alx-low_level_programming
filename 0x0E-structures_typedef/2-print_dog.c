@@ -2,7 +2,7 @@
 
 /**
  * print_dog - prints the data items of struct dog
- * d: pointer to struct dog
+ * @d: pointer to struct dog
  */
 
 void print_dog(struct dog *d)
