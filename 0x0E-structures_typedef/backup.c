@@ -15,14 +15,7 @@ void fillMem(char *str, int strLen, char *dest);
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t dog, *n_dog;
-	dog.name = name;
-	dog.age = age;
-	dog.owner = owner;
-
-	n_dog = &dog;
-
-	/*
+	dog_t *n_dog;
 	int nameLen, ownerLen;
 
 	n_dog = malloc(sizeof(dog_t));
@@ -54,7 +47,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	fillMem(owner, ownerLen, n_dog->owner);
 
 	n_dog->age = age;
-	*/
+
 	return (n_dog);
 }
 
