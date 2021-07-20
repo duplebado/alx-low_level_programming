@@ -18,41 +18,35 @@ dog_t *new_dog(char *name, float age, char *owner)
 	int nameLen, ownerLen;
 	dog_t dog, *n_dog;
 
-	dog.name = name;
-	dog.age = age;
-	dog.owner = owner;
-
-	n_dog = &dog;
-
 	/**
 	* n_dog = malloc(sizeof(dog_t));
 	* if (n_dog == NULL)
 	*	return (NULL);
 	*/
 	nameLen = _strLen(name);
-	n_dog->name = malloc(sizeof(char) * nameLen + 1);
+	dog.name = malloc(sizeof(char) * nameLen + 1);
 
-	if (n_dog->name == NULL)
+	if (dog.name == NULL)
 	{
-		free(n_dog);
 		return (NULL);
 	}
 
-	fillMem(name, nameLen, n_dog->name);
+	fillMem(name, nameLen, dog.name);
 
 	ownerLen = _strLen(owner);
-	n_dog->owner = malloc(sizeof(char) * ownerLen + 1);
+	dog.owner = malloc(sizeof(char) * ownerLen + 1);
 
-	if (n_dog->owner == NULL)
+	if (dog.owner == NULL)
 	{
-		free(n_dog);
-		free(n_dog->name);
+		free(dog.name);
 		return (NULL);
 	}
 
-	fillMem(owner, ownerLen, n_dog->owner);
+	fillMem(owner, ownerLen, dog.owner);
 
-	n_dog->age = age;
+	dog.age = age;
+
+	n_dog = &dog;
 
 	return (n_dog);
 }
