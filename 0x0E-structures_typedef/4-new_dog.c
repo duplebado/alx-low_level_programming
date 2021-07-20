@@ -17,17 +17,17 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	int nameLen, ownerLen;
 	dog_t dog, *n_dog;
+
 	dog.name = name;
 	dog.age = age;
 	dog.owner = owner;
 
 	n_dog = &dog;
 
-	/*
-	n_dog = malloc(sizeof(dog_t));
-
-	if (n_dog == NULL)
-		return (NULL);
+	/**
+	* n_dog = malloc(sizeof(dog_t));
+	* if (n_dog == NULL)
+	*	return (NULL);
 	*/
 	nameLen = _strLen(name);
 	n_dog->name = malloc(sizeof(char) * nameLen + 1);
