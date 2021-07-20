@@ -27,7 +27,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	n_dog->name = malloc(sizeof(char) * nameLen + 1);
 
 	if (n_dog->name == NULL)
+	{
+		free(n_dog);
 		return (NULL);
+	}
 
 	fillMem(name, nameLen, n_dog->name);
 
@@ -35,7 +38,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 	n_dog->owner = malloc(sizeof(char) * ownerLen + 1);
 
 	if (n_dog->owner == NULL)
+	{
+		free(n_dog);
+		free(n_dog->name);
 		return (NULL);
+	}
 
 	fillMem(owner, ownerLen, n_dog->owner);
 
