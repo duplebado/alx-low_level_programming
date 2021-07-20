@@ -32,7 +32,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	fillMem(name, nameLen, n_dog->name);
 
 	ownerLen = _strLen(owner);
-	n_dog->owner = malloc(sizeof(char) * ownerLen +1);
+	n_dog->owner = malloc(sizeof(char) * ownerLen + 1);
 
 	if (n_dog->owner == NULL)
 		return (NULL);
