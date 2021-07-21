@@ -1,0 +1,4 @@
+#ifndef FUNCTION_POINTERS_
+#define FUNCTION_POINTERS_
+
+#endif /* #ifndef FUNCTION_POINTERS_ */
