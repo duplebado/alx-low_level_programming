@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "variadic_functions.h"
 
 /**
@@ -7,6 +8,6 @@
  */
 int main(void)
 {
-	print_numbers("", 4, 304, 76, 87236, 28376);
+	print_numbers(NULL, 4, 5, 304, 76, 87236, 28376);
 	return (0);
 }
