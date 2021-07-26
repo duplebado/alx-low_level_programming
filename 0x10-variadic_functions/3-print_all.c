@@ -30,7 +30,7 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-	while (format[j] != '\0')
+	while (format && format[j] != '\0')
 	{
 		get_func_ptr = get_func(format[j], fmt_arr);
 
