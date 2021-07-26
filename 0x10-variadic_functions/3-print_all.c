@@ -18,7 +18,7 @@ void print_all(const char * const format, ...)
 	unsigned int j = 0;
 	char *separator = "";
 
-	struct format_struct fmt_arr[] = {
+	format_struct_ptr fmt_arr[] = {
 		{'c', print_char},
 		{'i', print_int},
 		{'f', print_float},
@@ -51,7 +51,7 @@ void print_all(const char * const format, ...)
 /**
  * get_func - gets corresponding function of format type
  * @fmt_arr: format types array
- * @indentifier: identifier whose function we are to get
+ * @identifier: format type
  * Return: pointer to function (SUCCESS) or
  * NULL (FAILURE)
  */
@@ -75,7 +75,7 @@ void (*get_func(char identifier, struct format_struct *fmt_arr))(va_list *)
 
 /**
  * print_char - prints a char
- * @c: char
+ * @arg: pointer to a char
  */
 
 void print_char(va_list *arg)
@@ -85,7 +85,7 @@ void print_char(va_list *arg)
 
 /**
  * print_int - prints an int
- * @i: int
+ * @arg: pointer to int
  */
 
 void print_int(va_list *arg)
@@ -95,7 +95,7 @@ void print_int(va_list *arg)
 
 /**
  * print_float - prints a float data type
- * @f: float
+ * @arg: pointer to float
  */
 
 void print_float(va_list *arg)
@@ -105,7 +105,7 @@ void print_float(va_list *arg)
 
 /**
  * print_string - prints a string
- * @s: pointer to string
+ * @arg: pointer to string
  */
 
 void print_string(va_list *arg)

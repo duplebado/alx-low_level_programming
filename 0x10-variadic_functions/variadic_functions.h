@@ -21,4 +21,5 @@ struct format_struct
 	void (*fmt_print_func)(va_list *arg_list);
 };
 
+typedef struct format_struct format_struct_ptr;
 #endif
