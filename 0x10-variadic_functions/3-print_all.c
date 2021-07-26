@@ -15,7 +15,7 @@ void print_string(va_list *arg);
  */
 void print_all(const char * const format, ...)
 {
-	unsigned int j;
+	unsigned int j = 0;
 	int add_separator = 0;
 
 	struct format_struct fmt_arr[] = {
@@ -30,7 +30,7 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-	for (j = 0; format[j] != '\0'; j++)
+	while (format[j] != '\0')
 	{
 		get_func_ptr = get_func(format[j], fmt_arr);
 
@@ -38,11 +38,12 @@ void print_all(const char * const format, ...)
 		{
 			if (add_separator)
 				printf("; ");
-			else
-				add_separator = 1;
 
+			add_separator = 1;
 			get_func_ptr(&args);
 		}
+
+		j++;
 	}
 
 	va_end(args);
