@@ -10,10 +10,15 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 - How to build and use linked lists
 
 #### Task 0.
-Write a function that prints all the elements of a list_t list.
+Write a function that prints all the elements of a `list_t` list.
 
-- Prototype: size_t print_list(const list_t *h);
+- Prototype: `size_t print_list(const list_t *h);`
 - Return: the number of nodes
 - Format: [length of string] string
-- If str is NULL, print [0] (nil)
+- If `str` is `NULL`, print `[0] (nil)`
 - You are allowed to use printf
+
+#### Task 1.
+Write a function that returns the number of elements in a linked `list_t` list.
+
+- Prototype: `size_t list_len(const list_t *h);`
