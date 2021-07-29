@@ -12,9 +12,8 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *new_node_ptr
-		
-		
+	list_t *new_node_ptr;
+
 	if (!head)
 		return (NULL);
 
