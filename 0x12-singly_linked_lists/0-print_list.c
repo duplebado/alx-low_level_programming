@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include "lists.h"
 
-int _strLen(char *str);
-
 /**
  * print_list - prints all the elements of a singly linked list
  * @h: pointer to the head node of the singly linked list
