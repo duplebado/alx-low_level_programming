@@ -11,7 +11,7 @@ list_t *createNewNode(const char *str);
  * @str: pointer to string to be assigned to the added node's str property
  * Return: pointer to the new node (SUCCESS) OR
  * NULL, if there is insufficent memory available (FAILURE)
- */ 
+ */
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *current_node = *head;
@@ -48,7 +48,7 @@ list_t *add_node_end(list_t **head, const char *str)
 
 list_t *createNewNode(const char *str)
 {
-	list_t *new_node_ptr = malloc(sizeof (list_t));
+	list_t *new_node_ptr = malloc(sizeof(list_t));
 
 	if (!new_node_ptr)
 		return (NULL);
