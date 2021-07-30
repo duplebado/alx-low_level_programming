@@ -42,7 +42,7 @@ list_t *add_node_end(list_t **head, const char *str)
 /**
  * createNewNode - create a new list_t list node
  * @str: pointer to string to be assigned to the created node's str property
- * RETURN: pointer to the new node (SUCCESS) OR
+ * Return: pointer to the new node (SUCCESS) OR
  * NULL, if there is insufficent memory available (FAILURE)
  */
 
