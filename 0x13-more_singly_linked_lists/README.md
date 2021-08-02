@@ -16,3 +16,8 @@ Write a function that prints all the elements of a `listint_t` list.
 - Return: the number of nodes
 - Format: element `n` followed by a new line
 - You are allowed to use `printf`
+
+#### Task 1.
+Write a function that returns the number of elements in a linked `listint_t` list.
+
+- Prototype: `size_t listint_len(const listint_t *h);`
