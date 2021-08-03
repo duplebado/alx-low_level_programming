@@ -18,12 +18,8 @@ int pop_listint(listint_t **head)
 		return (0);
 
 	node_to_pop = *head;
-
-	if (node_to_pop->next)
-		*head = node_to_pop->next;
-
+	*head = node_to_pop->next;
 	n = node_to_pop->n;
-
 	free(node_to_pop);
 
 	return (n);
