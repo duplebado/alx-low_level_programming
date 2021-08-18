@@ -12,7 +12,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int result = 0, i = 0, j = 0, found_1 = 0, strLen = 0;
 	unsigned int pos_of_first_char_one;
 
-	if (!b)
+	if (!b || *b == '\0')
 		return (result);
 
 	while (*(b + i) != '\0')
