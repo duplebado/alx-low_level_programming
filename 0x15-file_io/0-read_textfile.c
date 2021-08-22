@@ -11,27 +11,33 @@
  *
  * Return: The actual number of letters it could read and print, otherwise 0
  */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t n = 0;
-	int fd, a;
-	void *buf = malloc(sizeof(char) * 2);
+	char *buf;
+	ssize_t fd, actual_read;
 
-	if (filename == NULL || buf == NULL)
-		return (0);
 	fd = open(filename, O_RDONLY);
-	if (fd < 0)
+
+	if (fd == -1)
 		return (0);
-	for (n = 0; n < (ssize_t)letters; n++)
-	{
-		a = read(fd, buf, 1);
-		if (a == 0)
-			break;
-		a = write(STDOUT_FILENO, buf, 1);
-		if (a != 1)
-			return (0);
-	}
+
+	buf = malloc(sizeof(char) * (letters + 1));
+
+	if (!buf)
+		return (0);
+
+	actual_read = read(fd, buf, letters);
+	buf[letters + 1] = '\0';
+
 	close(fd);
+
+	actual_read = write(STDOUT_FILENO, buf, actual_read);
+
 	free(buf);
-	return (n);
+
+	if (actual_read == -1)
+		return (0);
+
+	return (actual_read);
 }
