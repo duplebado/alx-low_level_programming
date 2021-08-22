@@ -16,10 +16,8 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-
-	void *buf;
-	char *typecast_buf;
-	ssize_t fd, result, actual_read;
+	char *buf;
+	ssize_t fd, actual_read;
 
 	fd = open(filename, O_RDONLY);
 
@@ -32,14 +30,19 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	actual_read = read(fd, buf, letters);
-	typecast_buf = (char *)buf;
-	typecast_buf[letters + 1] = '\0';
+	buf[letters + 1] = '\0';
 
 	close(fd);
 
-	result = write(1, buf, actual_read);
+	actual_read = write(STDOUT_FILENO, buf, actual_read);
+
+	if (actual_read == -1)
+	{
+		free(buf);
+		return (0);
+	}
 
 	free(buf);
 
-	return (result);
+	return (actual_read);
 }
