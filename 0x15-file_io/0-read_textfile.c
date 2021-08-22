@@ -9,7 +9,8 @@
  * standard output
  * @letters: number of letters it should read and print
  * @filename: pointer to the filename of the file
- * Return: actual number of letters it could read and print
+ *
+ * Return: actual number of letters it could read and print; OR
  * 0, if the file can not be opened or read; OR
  * 0, if filename is NULL
  */
