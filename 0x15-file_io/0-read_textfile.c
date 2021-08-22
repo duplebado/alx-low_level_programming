@@ -1,6 +1,6 @@
 #include <unistd.h>
-#include<sys/types.h>
-#include<sys/stat.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <fcntl.h>
 #include <stdlib.h>
 
@@ -36,13 +36,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	actual_read = write(STDOUT_FILENO, buf, actual_read);
 
-	if (actual_read == -1)
-	{
-		free(buf);
-		return (0);
-	}
-
 	free(buf);
+
+	if (actual_read == -1)
+		return (0);
 
 	return (actual_read);
 }
