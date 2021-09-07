@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "dog.h"
 
 int _strLen(char *str);
@@ -36,6 +37,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	fillMem(name, nameLen, n_dog->name);
+	fillMem(name, nameLen, doggo.name);
 
 	ownerLen = _strLen(owner);
 	n_dog->owner = malloc(sizeof(char) * ownerLen + 1);
@@ -49,9 +51,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	fillMem(owner, ownerLen, n_dog->owner);
+	fillMem(owner, ownerLen, doggo.owner);
 
 	n_dog->age = age;
 	doggo.age = age;
+
+	printf("name: %s\n", doggo.name);
+	printf("owner: %s\n", doggo.owner);
 
 	return (n_dogg);
 }
