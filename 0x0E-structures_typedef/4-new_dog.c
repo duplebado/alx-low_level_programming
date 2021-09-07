@@ -24,7 +24,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 
 	nameLen = _strLen(name);
-	/* n_dog->name = malloc(sizeof(char) * nameLen + 1); */
+	n_dog->name = malloc(sizeof(char) * nameLen + 1);
 	doggo.name = malloc(sizeof(char) * nameLen + 1);
 
 	if (n_dog->name == NULL)
@@ -36,7 +36,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	fillMem(name, nameLen, n_dog->name);
 
 	ownerLen = _strLen(owner);
-	/* n_dog->owner = malloc(sizeof(char) * ownerLen + 1); */
+	n_dog->owner = malloc(sizeof(char) * ownerLen + 1)
 	doggo.owner = malloc(sizeof(char) * ownerLen + 1);
 
 	if (n_dog->owner == NULL)
@@ -48,8 +48,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	fillMem(owner, ownerLen, n_dog->owner);
 
-	/* n_dog->age = age; */
-	doggo.age = 7;
+	n_dog->age = age;
+	doggo.age = age;
 	n_dogg = &doggo;
 
 	return (n_dogg);
