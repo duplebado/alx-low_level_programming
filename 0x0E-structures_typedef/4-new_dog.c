@@ -56,9 +56,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	n_dog->age = age;
 	doggo.age = age;
 
-	printf("name: %s\n", doggo.name);
-	printf("owner: %s\n", doggo.owner);
-
 	return (n_dogg);
 }
 
