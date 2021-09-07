@@ -49,7 +49,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	fillMem(owner, ownerLen, n_dog->owner);
 
 	/* n_dog->age = age; */
-	doggo.age = age;
+	doggo.age = 7;
 	n_dogg = &doggo;
 
 	return (n_dogg);
