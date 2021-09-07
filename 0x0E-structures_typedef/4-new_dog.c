@@ -36,6 +36,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
+	if (doggo.name == NULL)
+	{
+		free(doggo.name);
+		return (NULL);
+	}
+
 	fillMem(name, nameLen, n_dog->name);
 	fillMem(name, nameLen, doggo.name);
 
@@ -47,6 +53,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		free(n_dog);
 		free(n_dog->name);
+		return (NULL);
+	}
+
+	if (doggo.owner == NULL)
+	{
+		free(doggo.name), free(doggo.owner);
 		return (NULL);
 	}
 
