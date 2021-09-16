@@ -9,6 +9,9 @@ void free_dlistint(dlistint_t *head)
 {
 	dlistint_t *current_node = head, *free_temp;
 
+	if (!head)
+		return;
+
 	while (current_node->next)
 	{
 		free_temp = current_node;
