@@ -1,5 +1,5 @@
 #include "lists.h"
-
+#include "5-get_dnodeint.c"
 dlistint_t *_get_dnodeint_at_index(dlistint_t *head, unsigned int index);
 
 /**
@@ -18,7 +18,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (!(*h))
 		return (NULL);
 
-	current_node_at_the_index = _get_dnodeint_at_index(*h, idx);
+	current_node_at_the_index = get_dnodeint_at_index(*h, idx);
 
 	if (!current_node_at_the_index)
 		return (NULL);
